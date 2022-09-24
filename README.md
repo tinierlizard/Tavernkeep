@@ -2,7 +2,6 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
-![](https://img.shields.io/badge/test-0%20passed-green)
 
 ### About
 
