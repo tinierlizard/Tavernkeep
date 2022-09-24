@@ -1,0 +1,27 @@
+{
+  "name": "tavernkeep",
+  "version": "1.0.0",
+  "description": "[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://forthebadge.com)\r [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinierlizard/Tavernkeep.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tinierlizard/Tavernkeep/issues"
+  },
+  "homepage": "https://github.com/tinierlizard/Tavernkeep#readme",
+  "dependencies": {
+    "@types/figlet": "^1.5.5",
+    "chalk": "^4.1.2",
+    "discord.js": "^14.4.0",
+    "dotenv": "^16.0.2",
+    "figlet": "^1.5.2"
+  }
+}
