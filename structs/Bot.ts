@@ -16,19 +16,13 @@ export class Bot {
         this.client.login(config.TOKEN);
 
         this.client.on("ready", () => {
-            let figletMsg: string = "";
+            
+            figlet("Tavernkeep", function(e, d){
+                if (e) console.log(e);
+                console.log(chalk.greenBright(d));
+            });
 
-            figlet("Tavernkeep", function (e: any, d: any) {
-                if (e) {
-                    console.dir(e);
-                } else {
-                    figletMsg = d;
-                }
-            })
-
-            console.log(chalk.greenBright(figletMsg));
-
-            this.client.user!.setActivity("new D&D campaigns", {
+            this.client.user!.setActivity("the new D&D campaign", {
                 type: ActivityType.Watching
             })
         })
