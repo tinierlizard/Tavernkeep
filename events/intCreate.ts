@@ -1,6 +1,8 @@
-import { BaseInteraction, Events } from "discord.js";
+import { BaseInteraction, EmbedBuilder, Events } from "discord.js";
 import { Event } from "../interfaces/Event";
 import { bot } from "../index";
+import { checkPermissions } from "../utils/checkPermissions";
+import { CommandLogger } from "../structs/CommandLogger";
 
 let event: Event = {
     name: "",
@@ -8,12 +10,28 @@ let event: Event = {
     execute: function() {
         let client = bot.client;
 
-        client.on(Events.InteractionCreate, (int: BaseInteraction) => {
-            if (int.isCommand()) {
+        client.on(Events.InteractionCreate, async (int: BaseInteraction) => {
+            if (int.isCommand() || int.isContextMenuCommand()) {
                 let cmds = bot.commands;
 
                 if (cmds.has(int.commandName)){
-                    cmds.get(int.commandName)?.execute(int);
+                    let command = cmds.get(int.commandName);
+                    if (await checkPermissions(command!.permissions || [], int, command!.defaultPermission)) {
+                        
+                        let logger = new CommandLogger(command!);
+                        logger.update("--- BEGIN ---")
+                        command!.execute(int, logger);
+                    } else {
+                        let embed = new EmbedBuilder()
+                            .setTitle("Invalid Permissions")
+                            .setDescription("You don't have permission to run this command.")
+                            .setColor([255,0,0]);
+
+                        int.reply({
+                            embeds: [embed],
+                            ephemeral: true
+                        })
+                    }
                 }
             }
         })
