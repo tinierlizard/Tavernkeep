@@ -5,7 +5,7 @@ import { checkPermissions } from "../utils/checkPermissions";
 import { CommandLogger } from "../structs/CommandLogger";
 
 let event: Event = {
-    name: "",
+    name: "IntCreate",
     type: Events.InteractionCreate,
     execute: function() {
         let client = bot.client;
