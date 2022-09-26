@@ -4,8 +4,6 @@ import { Permission } from "../interfaces/Permission";
 
 export async function checkPermissions(permData: Array<Permission>, int: CommandInteraction, defaultPermission: boolean): Promise<boolean> {
     return new Promise((res) => {
-        if (permData.length == 0) res(false);
-
         permData.forEach(perm => {
             if (perm.type == "USER") {
                 if (perm.id == int.user.id) res(perm.permission);
