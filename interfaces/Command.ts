@@ -8,7 +8,6 @@ export interface Command {
     defaultPermission: boolean,
     execute(int: CommandInteraction, logger: CommandLogger): any;
     type?: ApplicationCommandType,
-    aliases?: string[],
     permissions?: Array<Permission>,
     options?: ApplicationCommandOptionData[],
 }

@@ -235,5 +235,6 @@ export default {
         logger.update("Sent you're done message")
 
         logger.update("-- END --")
+        console.log();
     },
 } as Command;

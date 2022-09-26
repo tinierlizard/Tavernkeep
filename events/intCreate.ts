@@ -4,7 +4,7 @@ import { bot } from "../index";
 import { checkPermissions } from "../utils/checkPermissions";
 import { CommandLogger } from "../structs/CommandLogger";
 
-let event: Event = {
+export default {
     name: "IntCreate",
     type: Events.InteractionCreate,
     execute: function() {
@@ -36,6 +36,4 @@ let event: Event = {
             }
         })
     }
-}
-
-export default event;
+} as Event;
