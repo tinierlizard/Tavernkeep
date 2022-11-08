@@ -1,4 +1,4 @@
 node_modules/
 .env
 .vscode/
-test.ts
+commands\test.ts
