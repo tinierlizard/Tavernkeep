@@ -1,12 +1,13 @@
-import { GatewayIntentBits  } from "discord.js";
+import { GatewayIntentBits as Intents } from "discord.js";
 import { Bot } from "./structs/Bot";
 
 export const bot = new Bot({
         intents: [
-            GatewayIntentBits.Guilds,
-            GatewayIntentBits.GuildMembers,
-            GatewayIntentBits.GuildMessages,
-            GatewayIntentBits.MessageContent
+            Intents.GuildMessages,
+            Intents.GuildMembers,
+            Intents.GuildMessages,
+            Intents.MessageContent,
+            Intents.GuildMessages
         ]
     }
 )

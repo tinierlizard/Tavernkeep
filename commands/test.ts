@@ -18,7 +18,6 @@ export default {
             content: "Hello! I'm alive!",
             ephemeral: true
         })
-        
 
         logger.update("--- END ---")
         console.log();
